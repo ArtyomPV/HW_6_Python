@@ -29,10 +29,10 @@ def fill_array_2(size):
     array = [int(input('Введите элемент массива: ')) for i in range(size)]
     return array
 def find_interval(array, start, end):
-    index_list = []
-    for i in range(len(array)):
-        if min(start, end) <= array[i] <= max(start, end):
-            index_list.append(i)
+    index_list = [i for i in range(len(array)) if min(start, end) <= array[i] <= max(start, end)]
+    # for i in range(len(array)):
+    #     if min(start, end) <= array[i] <= max(start, end):
+    #         index_list.append(i)
     return index_list
 
 size = int(input('Введите количество элементов массива: '))
