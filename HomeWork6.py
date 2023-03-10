@@ -16,8 +16,8 @@ def show_array(array):
     print(array)
 
 
-array = fill_array()
-show_array(array)
+# array = fill_array()
+# show_array(array)
 
 
 # ======================================================================
@@ -25,5 +25,21 @@ show_array(array)
 # значения которых принадлежат заданному диапазону
 # (т.е. не меньше заданного минимума и не больше заданного максимума)
 # ======================================================================
+def fill_array_2(size):
+    array = [int(input('Введите элемент массива: ')) for i in range(size)]
+    return array
+def find_interval(array, start, end):
+    index_list = []
+    for i in range(len(array)):
+        if min(start, end) <= array[i] <= max(start, end):
+            index_list.append(i)
+    return index_list
 
+size = int(input('Введите количество элементов массива: '))
+array = fill_array_2(size)
+print(array)
+start = int(input('Введите начало диапазона: '))   
+end = int(input('Введите конец диапазона: '))
+index_list = find_interval(array, start, end)
+print(index_list)
 # ======================================================================
